@@ -53,7 +53,7 @@ func proverbsConn(connection net.Conn) {
 func getProverbs() (string, error) {
 	var proverbsArr []string
 
-	file, err := os.Open("/goProverbs.txt")
+	file, err := os.OpenFile("goproverbs.txt", os.O_RDONLY, 0777)
 
 	if err != nil {
 		return "", err
